@@ -8,7 +8,7 @@ class LinkSpider(CrawlSpider):
     allwed_domains = ['www.kumamoto-nct.ac.jp']
     start_urls = ['http://www.kumamoto-nct.ac.jp']
 
-    rules = [Rule(LinkExtractor(), callback='parse_link', follow=True)]
+    rules = [Rule(LinkExtractor(allow_domains = allwed_domains), callback='parse_link', follow=True)]
 
 
     def parse_link(self, respose):
